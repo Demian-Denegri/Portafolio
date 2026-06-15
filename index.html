@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Demian Denegri — Desarrollador de Software Junior | Soporte Técnico | Buenos Aires, Argentina"
+    />
+    <meta
+      name="keywords"
+      content="desarrollador software, junior developer, C#, .NET, SQL Server, HTML, CSS, JavaScript, Buenos Aires"
+    />
+    <meta name="author" content="Demian Denegri" />
+    <meta property="og:title" content="Demian Denegri — Portfolio" />
+    <meta
+      property="og:description"
+      content="Estudiante de Desarrollo de Software con experiencia en desarrollo web, C#/.NET, SQL Server y soporte técnico."
+    />
+    <meta property="og:type" content="website" />
+    <title>Demian Denegri — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="#detail-body" class="sr-only">Saltar al contenido</a>
+    <div id="crt" aria-hidden="true"><div id="crt-f"></div></div>
+
+    <!-- BOOT -->
+    <div id="screen-boot" class="screen active" aria-hidden="true">
+      <div id="boot-logo">DEMIAN</div>
+      <div id="boot-sub">Portfolio System v3.1</div>
+      <div id="boot-ver">
+        ISTEA — Desarrollo de Software // Buenos Aires, AR
+      </div>
+      <div id="boot-loading" aria-label="Cargando">
+        <div class="boot-dot"></div>
+        <div class="boot-dot"></div>
+        <div class="boot-dot"></div>
+        <div class="boot-dot"></div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div id="screen-main" class="screen" role="main">
+      <canvas id="starfield" aria-hidden="true"></canvas>
+      <canvas id="wave-bg" aria-hidden="true"></canvas>
+      <header id="main-header">
+        <div>
+          <div id="header-time" aria-live="polite">--:--:--</div>
+          <div id="header-date">Buenos Aires, Argentina</div>
+        </div>
+        <div id="header-right">
+          <div id="header-name">DEMIAN DENEGRI</div>
+          <div id="header-role">Desarrollador de Software Junior</div>
+        </div>
+      </header>
+      <nav id="cat-nav" role="navigation" aria-label="Secciones"></nav>
+      <div id="card-row" role="list" aria-label="Tarjetas"></div>
+      <div id="selected-title" aria-live="polite">
+        <div id="sel-name-text">Sobre Mí</div>
+        <div id="sel-hint">
+          Clic o Enter para abrir &nbsp;·&nbsp; ← → para navegar
+        </div>
+      </div>
+      <div id="controls-hint" aria-hidden="true">
+        <div class="ctrl">
+          <span class="ctrl-btn btn-x">✕</span><span>Abrir</span>
+        </div>
+        <div class="ctrl">
+          <span class="ctrl-btn btn-o">○</span><span>Volver</span>
+        </div>
+        <div class="ctrl">
+          <span class="ctrl-btn btn-arr">←</span
+          ><span class="ctrl-btn btn-arr">→</span><span>Navegar</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAIL -->
+    <div
+      id="screen-detail"
+      class="screen"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="detail-title"
+    >
+      <div id="detail-backdrop" tabindex="-1"></div>
+      <div id="detail-panel">
+        <div id="detail-header">
+          <div id="detail-icon" aria-hidden="true"></div>
+          <div id="detail-title">Sobre Mí</div>
+        </div>
+        <div id="detail-body" tabindex="0"></div>
+        <div id="detail-close-hint" aria-hidden="true">
+          ○ Volver &nbsp;|&nbsp; ESC Cerrar
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
