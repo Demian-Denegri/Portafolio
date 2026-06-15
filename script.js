@@ -171,7 +171,7 @@ const CARDS = [
     content: () => `
       <div class="d-section">
         <div class="photo-placeholder" role="img">
-          <img src="/img/102878081.jpg" alt="Mi foto" style="width:100%; height:100%; object-fit:cover;">
+          <img src="img/102878081.jpg" alt="Mi foto" style="width:100%; height:100%; object-fit:cover;">
         </div>
       </div>
       <div class="d-section">
