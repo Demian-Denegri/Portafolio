@@ -759,6 +759,34 @@ body {
   font-weight: 600;
 }
 
+/* PROJECT LINKS */
+.d-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.d-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  transition: background 0.15s ease;
+}
+.d-project-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.d-project-link svg {
+  width: 13px;
+  height: 13px;
+}
+
 /* TECH GRID */
 .tech-grid {
   display: grid;

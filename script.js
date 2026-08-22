@@ -259,6 +259,14 @@ const CARDS = [
             <img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" onerror="this.style.opacity='.3'">
             <div class="tech-info"><h4>Linux <span class="level basico">Básico</span></h4><p>CLI, administración de servidor Ubuntu, SSH.</p></div>
           </div>
+          <div class="tech-card">
+            <img class="tech-logo-img" src="https://opencode.ai/favicon.svg" alt="OpenCode" onerror="this.style.opacity='.3'">
+            <div class="tech-info"><h4>OpenCode <span class="level basico">Básico</span></h4><p>Agente de código en terminal para desarrollo asistido.</p></div>
+          </div>
+          <div class="tech-card">
+            <img class="tech-logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" onerror="this.style.opacity='.3'">
+            <div class="tech-info"><h4>MySQL <span class="level basico">Básico</span></h4><p>Consultas y diseño de bases de datos relacionales.</p></div>
+          </div>
         </div>
       </div>
       <div class="d-section">
@@ -359,11 +367,19 @@ const CARDS = [
           <div class="d-item-title">RastroFino API — Tienda de Perfumes</div>
           <div class="d-item-sub">API RESTful desarrollada con ASP.NET Core y SQL Server para un negocio real. Gestión de productos, categorías, clientes y pedidos. Frontend en GitHub Pages, API hosteada en Render. Integración con Cloudinary para imágenes y confirmación de compras vía WhatsApp. Primer proyecto en producción real.</div>
           <div><span class="d-tag">ASP.NET Core</span><span class="d-tag">SQL Server</span><span class="d-tag">REST API</span><span class="d-tag">GitHub Pages</span><span class="d-tag">Render</span></div>
+          <div class="d-project-links">
+            <a class="d-project-link" style="color:#ff6644" href="https://demian-denegri.github.io/rastrofino-web/" target="_blank" rel="noopener">${IC.rocket.replace("<svg", '<svg style="width:13px;height:13px"')} Ver sitio</a>
+            <a class="d-project-link" style="color:#aabbdd" href="https://github.com/Demian-Denegri/rastrofino-web" target="_blank" rel="noopener">${IC.github} Repo Web</a>
+            <a class="d-project-link" style="color:#aabbdd" href="https://github.com/Demian-Denegri/RastroFinoAPI" target="_blank" rel="noopener">${IC.github} Repo API</a>
+          </div>
         </div>
         <div class="d-item">
-          <div class="d-item-title">Matecito 3D — Gestión de Negocio</div>
-          <div class="d-item-sub">Aplicación web (SPA) para gestionar pedidos, filamentos, clientes y economía de un emprendimiento de impresión 3D. Desarrollada con HTML, CSS, JavaScript y Firebase Firestore. En proceso de migración a ASP.NET Core + SQL Server como evolución del proyecto.</div>
-          <div><span class="d-tag">HTML/CSS/JS</span><span class="d-tag">Firebase</span><span class="d-tag">Firestore</span><span class="d-tag">SPA</span></div>
+          <div class="d-item-title">Project Notas <span class="level aprendiendo" style="margin-left:6px">En desarrollo</span></div>
+          <div class="d-item-sub">App de notas estilo Any.do desarrollada en C#. Primer proyecto en solitario, con enfoque en organización de tareas y notas personales. Todavía en construcción.</div>
+          <div><span class="d-tag">C#</span><span class="d-tag">.NET</span><span class="d-tag">En progreso</span></div>
+          <div class="d-project-links">
+            <a class="d-project-link" style="color:#aabbdd" href="https://github.com/Demian-Denegri/Project-notas" target="_blank" rel="noopener">${IC.github} Repo</a>
+          </div>
         </div>
       </div>
     `,
@@ -381,7 +397,7 @@ const CARDS = [
           <div class="tl-item">
             <div class="tl-year">2026 — Presente</div>
             <div class="tl-title">Tecnicatura Superior en Desarrollo de Software</div>
-            <div class="tl-sub">ISTEA — Instituto Superior Tecnológico Empresarial Argentino, Buenos Aires.<br>Primer año. Materias: Programación (C#), Bases de Datos Relacionales (SQL Server/T-SQL), Arquitectura de Computadoras, Matemática, CTS.</div>
+            <div class="tl-sub">ISTEA — Instituto Superior Tecnológico Empresarial Argentino, Buenos Aires.<br>Primer año, 2° cuatrimestre. Cursando: Aplicaciones Web Cliente, Estadística y Probabilidad, Experiencia de Usuario, Laboratorio de Bases de Datos Relacionales, Programación Orientada a Objetos y Redes de Datos.<br>1° cuatrimestre aprobado: Programación (C#), Bases de Datos Relacionales (SQL Server/T-SQL), Arquitectura de Computadoras, Matemática, Ciencia Tecnología y Sociedad.<br>Por su cuenta: cursando Java.</div>
           </div>
           <div class="tl-item">
             <div class="tl-year">2024</div>
@@ -398,6 +414,20 @@ const CARDS = [
             <div class="cert-info">
               <div class="cert-name">Introduction to Cybersecurity</div>
               <div class="cert-issuer">Cisco Networking Academy</div>
+            </div>
+          </div>
+          <div class="cert-card">
+            <img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/120px-Google_2015_logo.svg.png" alt="Google" onerror="this.style.display='none'">
+            <div class="cert-info">
+              <div class="cert-name">Technical Support Fundamentals</div>
+              <div class="cert-issuer">Google</div>
+            </div>
+          </div>
+          <div class="cert-card">
+            <img class="cert-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/120px-Microsoft_logo.svg.png" alt="Microsoft" onerror="this.style.display='none'">
+            <div class="cert-info">
+              <div class="cert-name">Foundational C# with Microsoft</div>
+              <div class="cert-issuer">freeCodeCamp</div>
             </div>
           </div>
           <div class="cert-card">
