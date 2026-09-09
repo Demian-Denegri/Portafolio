@@ -381,6 +381,14 @@ const CARDS = [
             <a class="d-project-link" style="color:#aabbdd" href="https://github.com/Demian-Denegri/Project-notas" target="_blank" rel="noopener">${IC.github} Repo</a>
           </div>
         </div>
+        <div class="d-item">
+          <div class="d-item-title">Juego de Carreras (Consola)</div>
+          <div class="d-item-sub">Juego de carreras por consola desarrollado en C#, con selección aleatoria entre circuitos predefinidos y dibujo de pista carácter por carácter usando manejo de posición del cursor. Trabajado con diseño orientado a objetos, separando cálculo y renderizado.</div>
+          <div><span class="d-tag">C#</span><span class="d-tag">POO</span><span class="d-tag">Consola</span></div>
+          <div class="d-project-links">
+            <a class="d-project-link" style="color:#aabbdd" href="https://github.com/Demian-Denegri/Juego-Carreras-C-" target="_blank" rel="noopener">${IC.github} Repo</a>
+          </div>
+        </div>
       </div>
     `,
   },
