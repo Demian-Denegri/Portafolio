@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00050f" />
+    <meta name="color-scheme" content="dark" />
     <meta
       name="description"
       content="Demian Denegri — Desarrollador de Software Junior | Soporte Técnico | Buenos Aires, Argentina"
@@ -19,18 +21,21 @@
     />
     <meta property="og:type" content="website" />
     <title>Demian Denegri — Portfolio</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="data/content.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <a href="#detail-body" class="sr-only">Saltar al contenido</a>
     <div id="crt" aria-hidden="true"><div id="crt-f"></div></div>
 
-    <!-- BOOT -->
+    <!-- Pantalla de arranque -->
     <div id="screen-boot" class="screen active" aria-hidden="true">
       <div id="boot-logo">DEMIAN</div>
       <div id="boot-sub">Portfolio System v3.1</div>
@@ -45,28 +50,33 @@
       </div>
     </div>
 
-    <!-- MAIN -->
+    <!-- Pantalla principal -->
     <div id="screen-main" class="screen" role="main">
       <canvas id="starfield" aria-hidden="true"></canvas>
       <canvas id="wave-bg" aria-hidden="true"></canvas>
+
       <header id="main-header">
         <div>
-          <div id="header-time" aria-live="polite">--:--:--</div>
+          <div id="header-time">--:--:--</div>
           <div id="header-date">Buenos Aires, Argentina</div>
         </div>
         <div id="header-right">
-          <div id="header-name">DEMIAN DENEGRI</div>
-          <div id="header-role">Desarrollador de Software Junior</div>
+          <h1 id="header-name">DEMIAN DENEGRI</h1>
+          <p id="header-role">Desarrollador de Software Junior</p>
         </div>
       </header>
-      <nav id="cat-nav" role="navigation" aria-label="Secciones"></nav>
-      <div id="card-row" role="list" aria-label="Tarjetas"></div>
+
+      <nav id="cat-nav" aria-label="Secciones"></nav>
+
+      <div id="card-row" role="list" aria-label="Secciones del portafolio"></div>
+
       <div id="selected-title" aria-live="polite">
         <div id="sel-name-text">Sobre Mí</div>
-        <div id="sel-hint">
+        <p id="sel-hint">
           Clic o Enter para abrir &nbsp;·&nbsp; ← → para navegar
-        </div>
+        </p>
       </div>
+
       <div id="controls-hint" aria-hidden="true">
         <div class="ctrl">
           <span class="ctrl-btn btn-x">✕</span><span>Abrir</span>
@@ -75,33 +85,35 @@
           <span class="ctrl-btn btn-o">○</span><span>Volver</span>
         </div>
         <div class="ctrl">
-          <span class="ctrl-btn btn-arr">←</span
-          ><span class="ctrl-btn btn-arr">→</span><span>Navegar</span>
+          <span class="ctrl-arrows">
+            <span class="ctrl-btn btn-arr">←</span>
+            <span class="ctrl-btn btn-arr">→</span>
+          </span>
+          <span>Navegar</span>
         </div>
       </div>
     </div>
 
-    <!-- DETAIL -->
+    <!-- Panel de detalle -->
     <div
       id="screen-detail"
       class="screen"
       role="dialog"
       aria-modal="true"
       aria-labelledby="detail-title"
+      aria-hidden="true"
     >
-      <div id="detail-backdrop" tabindex="-1"></div>
+      <div id="detail-backdrop" aria-hidden="true"></div>
       <div id="detail-panel">
-        <div id="detail-header">
+        <header id="detail-header">
           <div id="detail-icon" aria-hidden="true"></div>
-          <div id="detail-title">Sobre Mí</div>
-        </div>
+          <h2 id="detail-title">Sobre Mí</h2>
+        </header>
         <div id="detail-body" tabindex="0"></div>
-        <div id="detail-close-hint" aria-hidden="true">
+        <p id="detail-close-hint" aria-hidden="true">
           ○ Volver &nbsp;|&nbsp; ESC Cerrar
-        </div>
+        </p>
       </div>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
