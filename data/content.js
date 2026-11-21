@@ -241,6 +241,14 @@ window.DATOS_PORTAFOLIO = {
             logotipo:
               "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
           },
+          {
+            nombre: "MySQL",
+            nivel: "Básico",
+            claseNivel: "basico",
+            descripcion: "Consultas y diseño de bases de datos relacionales.",
+            logotipo:
+              "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+          },
         ],
       },
       {
@@ -285,14 +293,6 @@ window.DATOS_PORTAFOLIO = {
             descripcion:
               "Agente de código en terminal para desarrollo asistido.",
             logotipo: "https://opencode.ai/favicon.svg",
-          },
-          {
-            nombre: "MySQL",
-            nivel: "Básico",
-            claseNivel: "basico",
-            descripcion: "Consultas y diseño de bases de datos relacionales.",
-            logotipo:
-              "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
           },
         ],
       },
@@ -367,7 +367,7 @@ window.DATOS_PORTAFOLIO = {
         "Let's Encrypt",
       ],
     },
-{
+    {
       encabezado: "Emprendimiento / Proyecto Personal — Matecito3D",
       titulo: "Modelado e Impresión 3D",
       descripcion:
@@ -402,7 +402,7 @@ window.DATOS_PORTAFOLIO = {
       titulo: "Lol Analyzer (Web App)",
       descripcion:
         "Un analizador de perfiles de League of Legends. Este proyecto permite buscar un invocador por Nombre + Tag (Riot ID), obtener su información de perfil, estadísticas en clasificatorias (Solo/Dúo y Flexible) y su historial reciente de partidas, mostrando los datos de una forma más clara.",
-      etiquetas: ["HTML", "CSS", "JavaScript", "Responsive","API"],
+      etiquetas: ["HTML", "CSS", "JavaScript", "Responsive", "API"],
       enlaces: [
         {
           texto: "Ver sitio",
