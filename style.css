@@ -37,6 +37,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html,
 body {
   width: 100%;
@@ -46,6 +50,14 @@ body {
   color: var(--c-white);
   font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Referencia para las pantallas: respeta la altura visible real en mobile. */
+body {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
 }
 
 button {
@@ -54,6 +66,7 @@ button {
   color: inherit;
   font: inherit;
 }
+
 
 a {
   color: inherit;
@@ -187,10 +200,14 @@ a {
 }
 
 #boot-ver {
+  max-width: 90vw;
+  padding: 0 12px;
   color: #334466;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.15em;
+  line-height: 1.6;
+  text-align: center;
   opacity: 0;
   animation: fadeUp 0.6s ease forwards 2.6s;
 }
@@ -283,7 +300,12 @@ a {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 16px;
   padding: 18px 32px 0;
+}
+
+#main-header > div {
+  min-width: 0;
 }
 
 #header-time {
@@ -299,7 +321,7 @@ a {
   margin-top: 5px;
   color: var(--c-grey);
   font-size: 11px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -319,7 +341,7 @@ a {
   margin-top: 5px;
   color: var(--c-cyan);
   font-size: 11px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -390,8 +412,8 @@ a {
 
 .cat-label {
   font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.25em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -402,6 +424,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: safe center;
   gap: clamp(10px, 2vw, 20px);
   flex: 1;
   padding: 16px 24px;
@@ -479,9 +502,9 @@ a {
   margin-top: 8px;
   padding: 0 6px;
   color: var(--c-grey);
-  font-size: clamp(7px, 0.95vw, 9.5px);
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-size: clamp(9px, 1vw, 10.5px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
   line-height: 1.4;
   text-align: center;
   text-transform: uppercase;
@@ -564,8 +587,8 @@ a {
 #sel-hint {
   margin-top: 3px;
   color: var(--c-grey);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.04em;
 }
 
 #controls-hint {
@@ -646,6 +669,7 @@ a {
   flex-direction: column;
   width: min(94vw, 720px);
   max-height: 86vh;
+  max-height: 86dvh;
   margin: auto;
   overflow: hidden;
   background: linear-gradient(160deg, #050e22 0%, #020912 100%);
@@ -689,11 +713,44 @@ a {
 }
 
 #detail-title {
+  min-width: 0;
   color: var(--accent);
   font-size: clamp(16px, 2.8vw, 23px);
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+#detail-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  margin-left: auto;
+  color: #ff4444;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  border: 1.5px solid #ff4444;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+#detail-close:hover {
+  background: red;
+  color:  black;
+  box-shadow: 0 0 14px rgba(255, 68, 68, 0.45);
+}
+
+#detail-close:active {
+  transform: scale(0.92);
 }
 
 #detail-body {
@@ -722,8 +779,8 @@ a {
   padding: 11px 24px;
   border-top: 1px solid rgba(0, 120, 255, 0.12);
   color: var(--c-grey);
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-size: 11px;
+  letter-spacing: 0.08em;
   text-align: right;
 }
 
@@ -742,9 +799,9 @@ a {
   padding-bottom: 7px;
   border-bottom: 1px solid rgba(0, 170, 255, 0.18);
   color: var(--c-cyan);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.36em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
@@ -841,8 +898,8 @@ a {
   padding: 3px 9px;
   color: #00dd77;
   font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   background: rgba(0, 200, 100, 0.12);
   border: 1px solid rgba(0, 200, 100, 0.28);
   border-radius: 3px;
@@ -863,8 +920,8 @@ a {
   gap: 6px;
   padding: 6px 12px;
   color: #aabbdd;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 12.5px;
+  font-weight: 500;
   letter-spacing: 0.03em;
   text-decoration: none;
   border: 1px solid currentColor;
@@ -928,8 +985,8 @@ a {
 .tech-info p {
   margin-top: 3px;
   color: #8099bb;
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 12.5px;
+  line-height: 1.5;
 }
 
 .level {
@@ -1016,7 +1073,7 @@ a {
 .ai-card-desc {
   margin-top: 7px;
   color: #8a9fbb;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1.5;
 }
 
@@ -1071,7 +1128,7 @@ a {
 .cert-issuer {
   margin-top: 2px;
   color: var(--c-grey);
-  font-size: 11.5px;
+  font-size: 12px;
 }
 
 /* Formación */
@@ -1261,38 +1318,99 @@ a {
 
 /* ── 8. Responsive ──────────────────────────────────────────────────────── */
 
+/* En celular todo queda a la vista: categorías en 3 columnas y tarjetas en 2. */
 @media (max-width: 600px) {
   #main-header {
     padding: 12px 16px 0;
   }
 
   #cat-nav {
-    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2px 4px;
+    margin-top: 12px;
+    padding: 0 12px;
+    overflow: visible;
   }
 
   .cat-item {
-    padding: 6px 13px;
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .cat-svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cat-label {
+    font-size: 10px;
+    letter-spacing: 0.06em;
   }
 
   #card-row {
-    gap: 8px;
-    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-content: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 14px 16px;
+    overflow: visible;
+  }
+
+  .mem-card {
+    width: 100%;
+    aspect-ratio: 1.55;
+  }
+
+  .mem-card.active {
+    transform: translateY(-6px) scale(1.06);
+  }
+
+  .card-icon-wrap {
+    height: 34px;
+    margin-top: 12px;
+  }
+
+  .card-icon-svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card-label {
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
   }
 
   #controls-hint {
     gap: 12px;
+    padding-bottom: calc(13px + env(safe-area-inset-bottom, 0px));
   }
 
   #detail-panel {
     max-height: 90vh;
+    max-height: 90dvh;
   }
 
   #detail-header {
+    gap: 10px;
     padding: 14px 16px 12px;
+  }
+
+  #detail-close {
+    width: 40px;
+    height: 40px;
   }
 
   #detail-body {
     padding: 14px 16px;
+  }
+
+  #detail-close-hint {
+    padding-bottom: calc(11px + env(safe-area-inset-bottom, 0px));
   }
 
   .tech-grid,
@@ -1307,18 +1425,114 @@ a {
 
 @media (max-width: 480px) {
   .card-icon-wrap {
-    height: 30px;
-    margin-top: 16px;
+    height: 28px;
+    margin-top: 10px;
   }
 
   .card-icon-svg {
     width: 24px;
     height: 24px;
   }
+}
+
+/* En teléfonos estrechos el reloj y el nombre ya no caben en la misma fila. */
+@media (max-width: 380px) {
+  #main-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #header-right {
+    text-align: left;
+  }
+}
+
+/* Landscape: grilla compacta de 6 categorías y 3x2 tarjetas, sin scroll. */
+@media (max-height: 500px) {
+  #main-header {
+    padding-top: 8px;
+  }
+
+  #cat-nav {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 2px;
+    margin-top: 6px;
+    padding: 0 12px;
+    overflow: visible;
+  }
+
+  .cat-item {
+    gap: 3px;
+    padding: 2px;
+  }
+
+  .cat-label {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .cat-svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  #card-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    overflow: visible;
+  }
+
+  .mem-card {
+    width: 100%;
+    aspect-ratio: 1.7;
+  }
+
+  .mem-card.active {
+    transform: translateY(-4px) scale(1.05);
+  }
+
+  .card-icon-wrap {
+    height: 22px;
+    margin-top: 8px;
+  }
+
+  .card-icon-svg {
+    width: 20px;
+    height: 20px;
+  }
 
   .card-label {
-    margin-top: 4px;
-    font-size: 6.5px;
-    letter-spacing: 0.06em;
+    margin-top: 2px;
+    font-size: 9px;
+    letter-spacing: 0.03em;
+  }
+
+  #controls-hint {
+    display: none;
+  }
+
+  #detail-panel {
+    max-height: 94vh;
+    max-height: 94dvh;
+  }
+}
+
+/* En táctil las leyendas de mando y teclado no aplican (JS ajusta los textos). */
+@media (hover: none) and (pointer: coarse) {
+  #controls-hint {
+    display: none;
+  }
+
+  .mem-card,
+  .cat-item,
+  .d-project-link {
+    -webkit-tap-highlight-color: rgba(0, 170, 255, 0.25);
   }
 }

@@ -615,10 +615,13 @@ const referencias = {
   navegacion: document.getElementById("cat-nav"),
   tarjetas: document.getElementById("card-row"),
   nombreSeleccionado: document.getElementById("sel-name-text"),
+  pistaSeleccion: document.getElementById("sel-hint"),
+  pistaCierre: document.getElementById("detail-close-hint"),// txt de abajo del todo
   pantallaDetalle: document.getElementById("screen-detail"),
   panelDetalle: document.getElementById("detail-panel"),
   iconoDetalle: document.getElementById("detail-icon"),
   tituloDetalle: document.getElementById("detail-title"),
+  cierreDetalle: document.getElementById("detail-close"),
   cuerpoDetalle: document.getElementById("detail-body"),
   fondoDetalle: document.getElementById("detail-backdrop"),
 };
@@ -628,6 +631,8 @@ const referencias = {
 let indiceActivo = 0;
 let detalleAbierto = false;
 let ultimoEnfocado = null;
+
+const esTactil = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
 /* ── Construcción de la interfaz ─────────────────────────────────────────── */
 
@@ -680,7 +685,12 @@ function construirTarjetas() {
     }
     elemento.appendChild(puntos);
 
-    elemento.addEventListener("click", () => activarTarjeta(indice));
+    elemento.addEventListener("click", () => {
+      // En táctil un toque abre directamente; con mouse el primer clic
+      // selecciona y el segundo abre, como en una consola.
+      if (esTactil) abrirDetalle(indice);
+      else activarTarjeta(indice);
+    });
     elemento.addEventListener("keydown", (evento) => {
       if (evento.key !== "Enter" && evento.key !== " ") return;
       evento.preventDefault();
@@ -705,11 +715,14 @@ function actualizarEstadosActivos() {
     tarjeta.classList.toggle("active", indice === indiceActivo);
   });
 
-  referencias.navegacion.children[indiceActivo]?.scrollIntoView({
-    block: "nearest",
-    inline: "nearest",
-    behavior: reducirMovimiento ? "auto" : "smooth",
-  });
+  const navegacion = referencias.navegacion;
+  if (navegacion.scrollWidth > navegacion.clientWidth) {
+    navegacion.children[indiceActivo]?.scrollIntoView({
+      block: "nearest",
+      inline: "nearest",
+      behavior: reducirMovimiento ? "auto" : "smooth",
+    });
+  }
 
   referencias.nombreSeleccionado.textContent =
     DATOS.tarjetas[indiceActivo].etiqueta;
@@ -737,6 +750,8 @@ function abrirDetalle(indice = indiceActivo) {
   sonidos.abrir();
   detalleAbierto = true;
   ultimoEnfocado = document.activeElement;
+  indiceActivo = indice;
+  actualizarEstadosActivos();
   referencias.principal.inert = true;
 
   const renderizador = RENDERIZADORES_POR_TARJETA[tarjeta.id];
@@ -799,6 +814,7 @@ function configurarImagenes(raiz) {
 /* ── Eventos globales ────────────────────────────────────────────────────── */
 
 referencias.fondoDetalle.addEventListener("click", cerrarDetalle);
+referencias.cierreDetalle.addEventListener("click", cerrarDetalle);
 
 function esObjetivoInteractivo(objetivo) {
   return (
@@ -839,6 +855,12 @@ const duracionDesvanecido = reducirMovimiento ? 0 : 750;
 
 function iniciarAplicacion() {
   referencias.arranque.style.opacity = "0";
+
+  if (esTactil) {
+    referencias.pistaSeleccion.textContent =
+      "Tocá una tarjeta para abrir · Usá el menú para cambiar";
+    referencias.pistaCierre.textContent = "Tocá la ✕ para volver";
+  }
 
   setTimeout(() => {
     referencias.arranque.classList.remove("active");

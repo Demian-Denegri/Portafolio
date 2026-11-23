@@ -255,20 +255,12 @@ window.DATOS_PORTAFOLIO = {
         titulo: "Herramientas & Entorno",
         elementos: [
           {
-            nombre: "VS Code",
+            nombre: "VS Code / Visual Studio",
             nivel: "Intermedio",
             claseNivel: "intermedio",
-            descripcion: "Entorno principal de desarrollo.",
+            descripcion: "Entorno de desarrollo para web y .NET.",
             logotipo:
               "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-          },
-          {
-            nombre: "Visual Studio",
-            nivel: "Intermedio",
-            claseNivel: "intermedio",
-            descripcion: "Proyectos .NET y C#.",
-            logotipo:
-              "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg",
           },
           {
             nombre: "Git / GitHub",
@@ -326,13 +318,6 @@ window.DATOS_PORTAFOLIO = {
           "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/deepseek-color.png",
         porcentaje: "50%",
         descripcion: "Alternativa técnica para código y algoritmos.",
-      },
-      {
-        nombre: "Grok (xAI)",
-        logotipo:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Grok_logo.svg/120px-Grok_logo.svg.png",
-        porcentaje: "40%",
-        descripcion: "Consultas técnicas en tiempo real.",
       },
     ],
   },
